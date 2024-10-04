@@ -2,6 +2,36 @@ import styled from "styled-components";
 export const CartElements = styled.div`
     position: relative;
 `;
+export const CartTitleContainer = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    > button {
+        border: none;
+        background-color: transparent;
+        color: black;
+        font-weight: bold;
+        font-size: 1rem;
+        transition: color 0.2s ease;
+        cursor: pointer;
+        margin-right: 0.2rem;
+    }
+    > button:hover {
+        color: red;
+    }
+    > h2 {
+        font-size: 1.7rem;
+    }
+`;
+export const FullPageCartContainer = styled.div`
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 99;
+`;
 export const CartContainer = styled.div`
     display: flex;
     flex-direction: column;
