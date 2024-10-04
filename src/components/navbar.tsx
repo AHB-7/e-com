@@ -7,11 +7,10 @@ import {
 } from "../styles/navbar";
 import { Container as BaseContainer } from "../styles/container";
 import { CiShoppingBasket } from "react-icons/ci";
-import { IconContext } from "react-icons";
 import styled from "styled-components";
 import { useShoppingCart } from "../context/shopping-card-context";
-import { CartContainer } from "../styles/cart-items";
-import { CartItem } from "./CartItem";
+import { CartContainer, CartElements } from "../styles/cart-items";
+import { CartItem } from "./cart-item";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {
@@ -29,34 +28,44 @@ export function Navbar() {
                     About
                 </NavbarLink>
             </NavbarSc>
-            <BasketBtn>
-                <IconContext.Provider
-                    value={{ color: "darkblue", size: "2rem" }}
-                >
+            <CartElements>
+                <BasketBtn>
                     <CiShoppingBasket />
-                    <CartContainer>
-                        <h2>Items in Cart</h2>
-                        {cartItems.length > 0 ? (
-                            cartItems.map((item) => (
-                                <CartItem
-                                    key={item.id}
-                                    id={item.id}
-                                    title={item.title}
-                                    price={item.price}
-                                    discountedPrice={item.discountedPrice}
-                                    imageUrl={item.imageUrl}
-                                    quantity={item.quantity}
-                                />
-                            ))
-                        ) : (
-                            <p>Cart is empty</p>
-                        )}
-                    </CartContainer>
-                </IconContext.Provider>
+                </BasketBtn>
+                <CartContainer>
+                    <h2>Items in Cart</h2>
+                    {cartItems.length > 0 ? (
+                        cartItems.map((item) => (
+                            <CartItem
+                                key={item.id}
+                                id={item.id}
+                                title={item.title}
+                                price={item.price}
+                                discountedPrice={item.discountedPrice}
+                                imageUrl={item.imageUrl}
+                                quantity={item.quantity}
+                            />
+                        ))
+                    ) : (
+                        <p>Cart is empty</p>
+                    )}
+                    <h5>
+                        Total: $
+                        {cartItems
+                            .reduce(
+                                (total, item) =>
+                                    total +
+                                    (item.discountedPrice ?? item.price ?? 0) *
+                                        item.quantity,
+                                0
+                            )
+                            .toFixed(2)}
+                    </h5>
+                </CartContainer>
                 {cartQuantity > 0 && (
                     <ItemsCounter>{cartQuantity}</ItemsCounter>
                 )}
-            </BasketBtn>
+            </CartElements>
         </Container>
     );
 }

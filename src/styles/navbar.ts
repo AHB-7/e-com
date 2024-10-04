@@ -15,16 +15,24 @@ export const NavbarLink = styled.a`
 `;
 export const BasketBtn = styled.button`
     border: none;
+    font-size: 2rem;
+    margin-top: 0.3rem;
     background-color: transparent;
-    position: relative;
     cursor: pointer;
+    z-index: 100;
 `;
 export const ItemsCounter = styled.span`
     position: absolute;
-    bottom: 0.5rem;
-    right: 0rem;
-    background-color: red;
+    bottom: 0.2rem;
+    padding: 0.2rem;
+    left: -0.4rem;
+    background-color: darkgreen;
     color: white;
+    aspect-ratio: 1/1;
     width: 1rem;
     border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: -1;
 `;
