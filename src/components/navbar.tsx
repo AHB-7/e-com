@@ -43,6 +43,7 @@ export function Navbar() {
                                     id={item.id}
                                     title={item.title}
                                     price={item.price}
+                                    discountedPrice={item.discountedPrice}
                                     imageUrl={item.imageUrl}
                                     quantity={item.quantity}
                                 />

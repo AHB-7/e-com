@@ -16,16 +16,13 @@ export const NavbarLink = styled.a`
 export const BasketBtn = styled.button`
     border: none;
     background-color: transparent;
-    margin-right: 1rem;
     position: relative;
-    &:hover {
-        cursor: pointer;
-    }
+    cursor: pointer;
 `;
 export const ItemsCounter = styled.span`
     position: absolute;
     bottom: 0.5rem;
-    right: -0.2rem;
+    right: 0rem;
     background-color: red;
     color: white;
     width: 1rem;

@@ -9,6 +9,7 @@ type CartItem = {
     quantity: number;
     title: string;
     price: number;
+    discountedPrice?: number;
     imageUrl: string;
 };
 
@@ -20,7 +21,8 @@ type ShoppingCartContextValue = {
         id: number,
         title: string,
         price: number,
-        imageUrl: string
+        imageUrl: string,
+        discountedPrice?: number
     ) => void;
     decreaseQuantity: (id: number) => void;
     deleteQuantity: (id: number) => void;
@@ -48,7 +50,8 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         id: number,
         title: string,
         price: number,
-        imageUrl: string
+        imageUrl: string,
+        discountedPrice?: number // Add discountedPrice
     ) {
         setCartItems((currItems) => {
             const itemExists = currItems.find((item) => item.id === id);
@@ -56,7 +59,14 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
             if (!itemExists) {
                 return [
                     ...currItems,
-                    { id, quantity: 1, title, price, imageUrl },
+                    {
+                        id,
+                        quantity: 1,
+                        title,
+                        price,
+                        discountedPrice, // Store discountedPrice
+                        imageUrl,
+                    },
                 ];
             } else {
                 return currItems.map((item) =>

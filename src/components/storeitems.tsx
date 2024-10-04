@@ -75,7 +75,13 @@ export function StoreItem({
             {quantity === 0 ? (
                 <AddToCardBtn
                     onClick={() =>
-                        increaseQuantity(id, title, price, image.url)
+                        increaseQuantity(
+                            id,
+                            title,
+                            price,
+                            image.url,
+                            discountedPrice
+                        )
                     }
                 >
                     +
@@ -84,7 +90,13 @@ export function StoreItem({
                 <div>
                     <AddToCardBtn
                         onClick={() =>
-                            increaseQuantity(id, title, price, image.url)
+                            increaseQuantity(
+                                id,
+                                title,
+                                price,
+                                image.url,
+                                discountedPrice
+                            )
                         }
                     >
                         +

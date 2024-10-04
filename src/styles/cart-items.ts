@@ -44,9 +44,31 @@ export const CartItemContainer = styled.div`
         width: 60px;
         object-fit: cover;
     }
-    > div > h4 {
+    > div > div {
         width: 100%;
         max-width: 100px;
         text-align: left;
     }
+`;
+
+export const EncDecButton = styled.button`
+    border: none;
+    background-color: transparent;
+    border: 0.1em solid black;
+    height: 1rem;
+    width: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    cursor: pointer;
+`;
+export const CounterController = styled.div`
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    gap: 0.5rem;
 `;
