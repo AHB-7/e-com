@@ -12,7 +12,7 @@ import {
     StyledLink,
 } from "../styles/product-styling";
 
-type Product = {
+export interface Product {
     id: number;
     title: string;
     price: number;
@@ -23,7 +23,7 @@ type Product = {
         alt?: string;
     };
     description: string;
-};
+}
 
 export function StoreItem({
     id,

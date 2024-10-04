@@ -73,21 +73,25 @@ export function Navbar() {
                             ) : (
                                 <p>Cart is empty</p>
                             )}
-                            <h5>
-                                Total: $
-                                {cartItems
-                                    .reduce(
-                                        (total, item) =>
-                                            total +
-                                            (item.discountedPrice ??
-                                                item.price ??
-                                                0) *
-                                                item.quantity,
-                                        0
-                                    )
-                                    .toFixed(2)}
-                            </h5>
-                            <button>Checkout</button>
+                            {cartItems.length > 0 ? (
+                                <>
+                                    <h5>
+                                        Total: $
+                                        {cartItems
+                                            .reduce(
+                                                (total, item) =>
+                                                    total +
+                                                    (item.discountedPrice ??
+                                                        item.price ??
+                                                        0) *
+                                                        item.quantity,
+                                                0
+                                            )
+                                            .toFixed(2)}
+                                    </h5>
+                                    <button>Checkout</button>
+                                </>
+                            ) : null}
                         </CartContainer>
                     </FullPageCartContainer>
                 ) : null}
