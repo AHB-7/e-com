@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import {
+    PrimaryBtn,
     ProductDescription,
     ProductInfoContainer,
     ProductPrice,
@@ -82,7 +83,7 @@ export default function SingleProductPage() {
                         )}
                     </div>
                     {quantity === 0 ? (
-                        <button
+                        <PrimaryBtn
                             onClick={() =>
                                 increaseQuantity(
                                     product.id,
@@ -94,15 +95,15 @@ export default function SingleProductPage() {
                             }
                         >
                             Add To Cart
-                        </button>
+                        </PrimaryBtn>
                     ) : (
                         <div>
-                            <button
+                            <PrimaryBtn
                                 onClick={() => decreaseQuantity(product.id)}
                             >
                                 -
-                            </button>
-                            <button
+                            </PrimaryBtn>
+                            <PrimaryBtn
                                 onClick={() =>
                                     increaseQuantity(
                                         product.id,
@@ -114,7 +115,7 @@ export default function SingleProductPage() {
                                 }
                             >
                                 Add To Cart
-                            </button>
+                            </PrimaryBtn>
                             <p>Quantity: {quantity}</p>
                         </div>
                     )}

@@ -11,11 +11,13 @@ export const Navbar = styled.nav`
     margin-right: auto;
     > form {
         margin-right: auto;
+        width: 100%;
+        max-width: 14rem;
     }
     > form > input {
         padding: 0.2rem;
         border: none;
-        width: 15rem;
+        width: 14rem;
         font-size: 1rem;
         border-bottom: 0.1rem solid ${(props) => props.theme.colors.text};
         background-color: transparent;
@@ -36,14 +38,16 @@ export const BasketBtn = styled.button`
     background-color: transparent;
     cursor: pointer;
     z-index: 100;
+    position: relative;
 `;
 export const ItemsCounter = styled.span`
     position: absolute;
     bottom: 0.2rem;
-    padding: 0.2rem;
+    padding: 0.1rem;
     left: -0.4rem;
     background-color: darkgreen;
     color: white;
+    font-size: 1rem;
     aspect-ratio: 1/1;
     width: 1rem;
     height: 1rem;

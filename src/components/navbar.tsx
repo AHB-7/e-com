@@ -17,6 +17,7 @@ import { CartItem } from "./cart-item";
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { useSearch } from "../hooks/search-context";
+import { PrimaryBtn } from "../styles/single-product";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {
@@ -49,6 +50,9 @@ export function Navbar() {
                     }}
                 >
                     <IoCartOutline />
+                    {cartQuantity > 0 && (
+                        <ItemsCounter>{cartQuantity}</ItemsCounter>
+                    )}
                 </BasketBtn>
                 {isCartOpen === true ? (
                     <CartContainer>
@@ -93,14 +97,11 @@ export function Navbar() {
                                         )
                                         .toFixed(2)}
                                 </h5>
-                                <button>Checkout</button>
+                                <PrimaryBtn>Checkout</PrimaryBtn>
                             </>
                         ) : null}
                     </CartContainer>
                 ) : null}
-                {cartQuantity > 0 && (
-                    <ItemsCounter>{cartQuantity}</ItemsCounter>
-                )}
             </CartElements>
         </Container>
     );

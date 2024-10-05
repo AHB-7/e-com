@@ -23,15 +23,7 @@ export const CartTitleContainer = styled.div`
         font-size: 1.7rem;
     }
 `;
-// export const FullPageCartContainer = styled.div`
-//     // position: absolute;
-//     // top: 0;
-//     // right: 0;
-//     // width: 100vw;
-//     // height: 100vh;
-//     // background-color: rgba(0, 0, 0, 0.5);
-//     // z-index: 99;
-// `;
+
 export const CartContainer = styled.div`
     display: flex;
     flex-direction: column;

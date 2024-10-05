@@ -47,6 +47,19 @@ export const ProductDescription = styled.p`
     margin: 1rem 0;
     font-size: 1.2rem;
 `;
+
+export const PrimaryBtn = styled.button`
+        border: none;
+        background-color: ${(props) => props.theme.colors.text};
+        color: ${(props) => props.theme.colors.background};
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 0.2rem;
+        &:hover {
+            opacity: 0.9;
+        `;
 export const ProductPrice = styled.div`
     display: flex;
     justify-content: space-between;
@@ -58,32 +71,7 @@ export const ProductPrice = styled.div`
     > div > h2 {
         font-size: 1.2rem;
     }
-    > button {
-        border: none;
-        background-color: ${(props) => props.theme.colors.text};
-        color: ${(props) => props.theme.colors.background};
-        padding: 0.5rem 2rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: 0.3s ease;
-        border-radius: 0.2rem;
-        &:hover {
-            opacity: 0.9;
-        }
-    }
-    > div > button {
-        border: none;
-        background-color: ${(props) => props.theme.colors.text};
-        color: ${(props) => props.theme.colors.background};
-        padding: 0.5rem 2rem;
-        font-size: 1rem;
-        cursor: pointer;
-        transition: 0.3s ease;
-        border-radius: 0.2rem;
-        &:hover {
-            opacity: 0.9;
-        }
-    }
+
     > div > p {
         text-align: end;
     }
