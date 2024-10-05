@@ -4,10 +4,25 @@ export const Navbar = styled.nav`
     display: flex;
     justify-content: start;
     align-items: center;
+    flex-wrap: wrap;
     gap: 1rem;
     color: white;
     padding: 1rem;
     margin-right: auto;
+    > form {
+        margin-right: auto;
+    }
+    > form > input {
+        padding: 0.2rem;
+        border: none;
+        width: 15rem;
+        font-size: 1rem;
+        border-bottom: 0.1rem solid ${(props) => props.theme.colors.text};
+        background-color: transparent;
+    }
+    > form > input:focus {
+        outline: none;
+    }
 `;
 
 export const NavbarLink = styled.a`

@@ -4,6 +4,7 @@ import useFetch from "../hooks/fetch";
 import { AllCards } from "../styles/product-styling";
 import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
+import { useSearch } from "../hooks/search-context";
 
 interface Product {
     id: number;
@@ -15,17 +16,25 @@ interface Product {
         url: string;
         alt?: string;
     };
-    message: string;
     description: string;
 }
 
 export function Products() {
+    const { searchQuery } = useSearch();
     const [page, setPage] = useState(1);
     const limit = 9;
-    const { data, loading, error } = useFetch<Product[]>(
-        `https://v2.api.noroff.dev/online-shop?limit=${limit}&page=${page}`
+
+    const fetchUrl = searchQuery
+        ? `https://v2.api.noroff.dev/online-shop` // Fetch all items if searchQuery is present
+        : `https://v2.api.noroff.dev/online-shop?limit=${limit}&page=${page}`; // Paginated fetch when no search query
+
+    const { data, loading, error } = useFetch<Product[]>(fetchUrl);
+
+    const isLastPage = searchQuery ? true : data ? data.length < limit : false;
+
+    const filteredData = data?.filter((product) =>
+        product.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
-    const isLastPage = data ? data.length < limit : false;
 
     const handleNextPage = () => {
         if (!isLastPage) setPage((prevPage) => prevPage + 1);
@@ -41,19 +50,20 @@ export function Products() {
 
     return (
         <AllCards>
-            <>
-                {data?.map((item: Product) => (
-                    <StoreItem key={item.id} {...item} />
-                ))}
-            </>
-            <PaginationContainer>
-                <Pagination
-                    currentPage={page}
-                    onNext={handleNextPage}
-                    onPrevious={handlePreviousPage}
-                    isLastPage={isLastPage}
-                />
-            </PaginationContainer>
+            {filteredData?.map((item: Product) => (
+                <StoreItem key={item.id} {...item} />
+            ))}
+
+            {!searchQuery && (
+                <PaginationContainer>
+                    <Pagination
+                        currentPage={page}
+                        onNext={handleNextPage}
+                        onPrevious={handlePreviousPage}
+                        isLastPage={isLastPage}
+                    />
+                </PaginationContainer>
+            )}
         </AllCards>
     );
 }
