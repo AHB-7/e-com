@@ -1,5 +1,11 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import {
+    ProductDescription,
+    ProductInfoContainer,
+    ProductPrice,
+    SingleProductPageContainer,
+} from "../styles/single-product";
 
 interface Product {
     id: number;
@@ -12,6 +18,9 @@ interface Product {
         url: string;
         alt?: string;
     };
+    reviews: [
+        { rating: number; id: string; username: string; description: string }
+    ];
 }
 
 export default function SingleProductPage() {
@@ -43,18 +52,45 @@ export default function SingleProductPage() {
     if (!product) return <div>No product found.</div>;
 
     return (
-        <div>
-            <h1>{product.title}</h1>
+        <SingleProductPageContainer>
             <img
                 src={product.image?.url || "https://via.placeholder.com/150"}
                 alt={product.image?.alt || product.title}
             />
-            <p>Price: ${product.discountedPrice}</p>
-            <p>Rating: {product.rating}</p>
-            <p>{product.description}</p>
-            <p>
-                Original Price: <s>${product.price}</s>
-            </p>
-        </div>
+            <ProductInfoContainer>
+                <h1>{product.title}</h1>
+                <ProductDescription>
+                    <p>{product.description}</p>
+                </ProductDescription>
+                <ProductPrice>
+                    <div>
+                        {product.price === product.discountedPrice ? (
+                            <h2>
+                                Original Price: <s>${product.price}</s>
+                            </h2>
+                        ) : (
+                            <>
+                                <h2>
+                                    Before: <s>${product.price}</s>
+                                </h2>
+                                <h2>Now : ${product.discountedPrice}</h2>{" "}
+                            </>
+                        )}
+                    </div>
+                    <div>
+                        <button>Add To Cart</button>
+                    </div>
+                </ProductPrice>
+                <div>
+                    {product.reviews.map((review) => (
+                        <div key={review.id}>
+                            <h3>{review.username}</h3>
+                            <p>{review.description}</p>
+                            <p>Rating: {review.rating}</p>
+                        </div>
+                    ))}
+                </div>
+            </ProductInfoContainer>
+        </SingleProductPageContainer>
     );
 }

@@ -16,7 +16,8 @@ export const NavbarLink = styled.a`
 export const BasketBtn = styled.button`
     border: none;
     font-size: 2rem;
-    margin-top: 0.3rem;
+    margin-top: 0.5rem;
+    margin-right: 1rem;
     background-color: transparent;
     cursor: pointer;
     z-index: 100;
@@ -30,6 +31,7 @@ export const ItemsCounter = styled.span`
     color: white;
     aspect-ratio: 1/1;
     width: 1rem;
+    height: 1rem;
     border-radius: 50%;
     display: flex;
     justify-content: center;
