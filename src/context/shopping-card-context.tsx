@@ -55,7 +55,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         title: string,
         price: number,
         imageUrl: string,
-        discountedPrice?: number // Add discountedPrice
+        discountedPrice?: number
     ) {
         setCartItems((currItems) => {
             const itemExists = currItems.find((item) => item.id === id);
@@ -68,7 +68,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
                         quantity: 1,
                         title,
                         price,
-                        discountedPrice, // Store discountedPrice
+                        discountedPrice,
                         imageUrl,
                     },
                 ];
