@@ -24,13 +24,13 @@ export const CartTitleContainer = styled.div`
     }
 `;
 export const FullPageCartContainer = styled.div`
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    z-index: 99;
+    // position: absolute;
+    // top: 0;
+    // right: 0;
+    // width: 100vw;
+    // height: 100vh;
+    // background-color: rgba(0, 0, 0, 0.5);
+    // z-index: 99;
 `;
 export const CartContainer = styled.div`
     display: flex;
@@ -49,6 +49,8 @@ export const CartContainer = styled.div`
         text-align: right;
         font-size: 1.2rem;
     }
+    // border: 0.1rem solid #ccc;
+    box-shadow: 0 0 0.5rem 0.1rem #ccc;
 `;
 export const RemoveButton = styled.p`
     position: absolute;

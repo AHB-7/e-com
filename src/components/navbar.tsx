@@ -30,11 +30,8 @@ export function Navbar() {
                 <NavbarLink as={NavLink} to="/">
                     Home
                 </NavbarLink>
-                <NavbarLink as={NavLink} to="/products">
-                    Products
-                </NavbarLink>
-                <NavbarLink as={NavLink} to="/about">
-                    About
+                <NavbarLink as={NavLink} to="/contact">
+                    Contact
                 </NavbarLink>
             </NavbarSc>
             <CartElements>
