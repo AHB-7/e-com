@@ -4,8 +4,11 @@ import {
     ProductDescription,
     ProductInfoContainer,
     ProductPrice,
+    ProductRatingContainer,
     SingleProductPageContainer,
 } from "../styles/single-product";
+import { ItemRating } from "../styles/product-styling";
+import { useShoppingCart } from "../context/shopping-card-context";
 
 interface Product {
     id: number;
@@ -24,6 +27,9 @@ interface Product {
 }
 
 export default function SingleProductPage() {
+    const { increaseQuantity, decreaseQuantity, getItemsQuantity } =
+        useShoppingCart();
+
     const { productId } = useParams<{ productId: string }>();
     const [product, setProduct] = useState<Product | null>(null);
     const [loading, setLoading] = useState(true);
@@ -46,11 +52,11 @@ export default function SingleProductPage() {
                 setLoading(false);
             });
     }, [productId]);
+    const quantity = getItemsQuantity(product?.id || 0);
 
     if (loading) return <div>Loading...</div>;
     if (error) return <div>Error: {error.message}</div>;
     if (!product) return <div>No product found.</div>;
-
     return (
         <SingleProductPageContainer>
             <img
@@ -65,9 +71,7 @@ export default function SingleProductPage() {
                 <ProductPrice>
                     <div>
                         {product.price === product.discountedPrice ? (
-                            <h2>
-                                Original Price: <s>${product.price}</s>
-                            </h2>
+                            <h2>Price: ${product.price}</h2>
                         ) : (
                             <>
                                 <h2>
@@ -77,19 +81,71 @@ export default function SingleProductPage() {
                             </>
                         )}
                     </div>
-                    <div>
-                        <button>Add To Cart</button>
-                    </div>
-                </ProductPrice>
-                <div>
-                    {product.reviews.map((review) => (
-                        <div key={review.id}>
-                            <h3>{review.username}</h3>
-                            <p>{review.description}</p>
-                            <p>Rating: {review.rating}</p>
+                    {quantity === 0 ? (
+                        <button
+                            onClick={() =>
+                                increaseQuantity(
+                                    product.id,
+                                    product.title,
+                                    product.price,
+                                    product.image.url,
+                                    product.discountedPrice
+                                )
+                            }
+                        >
+                            Add To Cart
+                        </button>
+                    ) : (
+                        <div>
+                            <button
+                                onClick={() => decreaseQuantity(product.id)}
+                            >
+                                -
+                            </button>
+                            <button
+                                onClick={() =>
+                                    increaseQuantity(
+                                        product.id,
+                                        product.title,
+                                        product.price,
+                                        product.image.url,
+                                        product.discountedPrice
+                                    )
+                                }
+                            >
+                                Add To Cart
+                            </button>
+                            <p>Quantity: {quantity}</p>
                         </div>
-                    ))}
-                </div>
+                    )}
+                </ProductPrice>
+                {product.reviews.length > 0 ? (
+                    <ProductRatingContainer>
+                        <h2> Reviews </h2>
+                        {product.reviews.map((review) => (
+                            <div key={review.id}>
+                                <div>
+                                    <h3>{review.username}</h3>
+                                    <ItemRating>
+                                        {Array.from({
+                                            length: review.rating,
+                                        }).map((_, index) => (
+                                            <span key={index}>★</span>
+                                        ))}
+                                    </ItemRating>
+                                </div>
+                                <div>
+                                    <p>{review.description}</p>
+                                </div>
+                                <hr />
+                            </div>
+                        ))}{" "}
+                    </ProductRatingContainer>
+                ) : (
+                    <ProductRatingContainer>
+                        <h5>This product has no reviews yet!</h5>
+                    </ProductRatingContainer>
+                )}
             </ProductInfoContainer>
         </SingleProductPageContainer>
     );

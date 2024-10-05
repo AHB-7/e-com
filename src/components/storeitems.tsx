@@ -35,7 +35,6 @@ export function StoreItem({
 }: Product) {
     const { getItemsQuantity, increaseQuantity, decreaseQuantity } =
         useShoppingCart();
-    console.log(id);
     const quantity = getItemsQuantity(id);
 
     return (
