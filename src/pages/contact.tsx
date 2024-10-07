@@ -1,10 +1,11 @@
-import ContentForm from "../components/comtent-form";
+import ContentForm from "../components/content-form";
+import { ContactPageContainer } from "../styles/container";
 
 export function Contact() {
     return (
-        <div>
+        <ContactPageContainer>
             <h1>Contact</h1>
             <ContentForm />
-        </div>
+        </ContactPageContainer>
     );
 }

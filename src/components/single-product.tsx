@@ -10,6 +10,7 @@ import {
 } from "../styles/single-product";
 import { ItemRating } from "../styles/product-styling";
 import { useShoppingCart } from "../context/shopping-card-context";
+import { Loading } from "./loading";
 
 interface Product {
     id: number;
@@ -55,7 +56,7 @@ export default function SingleProductPage() {
     }, [productId]);
     const quantity = getItemsQuantity(product?.id || 0);
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loading />;
     if (error) return <div>Error: {error.message}</div>;
     if (!product) return <div>No product found.</div>;
     return (

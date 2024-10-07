@@ -6,6 +6,7 @@ import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
 import { useSearch } from "../hooks/search-context";
 import { ProductPageContainer } from "../styles/container";
+import { Loading } from "../components/loading";
 
 interface Product {
     id: number;
@@ -45,7 +46,7 @@ export function Products() {
         setPage((prevPage) => Math.max(prevPage - 1, 1));
     };
 
-    if (loading) return <div>Loading...</div>;
+    if (loading) return <Loading />;
     if (error)
         return <div>Error fetching products. Please try again later.</div>;
 

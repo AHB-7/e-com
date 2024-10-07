@@ -2,6 +2,29 @@ import styled from "styled-components";
 export const CartElements = styled.div`
     position: relative;
 `;
+
+export const CartContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: ${({ theme }) => theme.colors.background};
+    border-radius: 5px;
+    width: 300px;
+    margin-right: 1rem;
+    position: absolute;
+    height: 20rem;
+    overflow-y: auto;
+    top: 3rem;
+    right: -1rem;
+    z-index: 100;
+    > h5 {
+        text-align: right;
+        font-size: 1.2rem;
+    }
+    box-shadow: 0 0 0.5rem 0.1rem #ccc;
+`;
+
 export const CartTitleContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -24,26 +47,6 @@ export const CartTitleContainer = styled.div`
     }
 `;
 
-export const CartContainer = styled.div`
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    padding: 1rem;
-    background-color: ${({ theme }) => theme.colors.background};
-    border-radius: 5px;
-    width: 300px;
-    margin-right: 1rem;
-    position: absolute;
-    top: 3rem;
-    right: -1rem;
-    z-index: 100;
-    > h5 {
-        text-align: right;
-        font-size: 1.2rem;
-    }
-    // border: 0.1rem solid #ccc;
-    box-shadow: 0 0 0.5rem 0.1rem #ccc;
-`;
 export const RemoveButton = styled.p`
     position: absolute;
     top: 0.6rem;
