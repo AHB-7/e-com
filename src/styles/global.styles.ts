@@ -12,19 +12,16 @@ export const baseTheme = {
         scrollbarTrack: "#E0E0E0",
     },
     fontSizes: {
-        small: "0.7em",
-        medium: "1em",
-        large: "1.5em",
-        extraLarge: "2em",
+        small: "0.7rem",
+        medium: "1rem",
+        large: "1.5rem",
+        extraLarge: "2rem",
     },
     breakpoints: {
-        small: "676px",
-        medium: "868px",
-        large: "992px",
-        xlarge: "1200px",
-    },
-    shadows: {
-        default: "0 2px 4px 0 rgba(0, 0, 0, 0.2)",
+        small: "38rem",
+        medium: "50rem",
+        large: "63rem",
+        xlarge: "70rem",
     },
 };
 
@@ -34,7 +31,7 @@ export const GlobalStyle = createGlobalStyle`
     background-color: ${({ theme }) => theme.colors.background}; 
     font-family: Arial, sans-serif;   
     width: 100%;
-    max-width: 1000px;
+    max-width: 63rem;
     margin: 0 auto;
   }
 
@@ -48,7 +45,7 @@ export const GlobalStyle = createGlobalStyle`
     text-decoration: none;
   }
   ::-webkit-scrollbar {
-    width: 10px;
+    width: 0.6rem;
   }
 
   ::-webkit-scrollbar-track {
@@ -57,8 +54,8 @@ export const GlobalStyle = createGlobalStyle`
 
   ::-webkit-scrollbar-thumb {
     background-color: ${({ theme }) => theme.colors.scrollbarThumb}; 
-    border-radius: 10px; 
-    border: 2px solid transparent; 
+    border-radius: 0.6rem; 
+    border: 0.2rem solid transparent; 
   }
 
   ::-webkit-scrollbar-thumb:hover {

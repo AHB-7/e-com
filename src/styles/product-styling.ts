@@ -42,8 +42,8 @@ export const CardContainer = styled.div`
     width: 100%;
     height: 100%;
     position: relative;
-    max-height: 400px;
-    max-width: 400px;
+    max-height: 25rem;
+    max-width: 25rem;
     aspect-ratio: 1/1;
 `;
 
@@ -64,9 +64,9 @@ export const InfoContainer = styled.div`
     top: 0;
     left: 0;
     width: 100%;
-    max-width: 400px;
+    max-width: 25rem;
     height: 100%;
-    max-height: 400px;
+    max-height: 25rem;
     background: rgb(0, 0, 0);
     background: linear-gradient(
         180deg,
@@ -95,7 +95,7 @@ export const CardFooter = styled.div`
     align-items: center;
     height: 2.5rem;
     width: 100%;
-    max-width: 400px;
+    max-width: 25rem;
     background: rgb(0, 0, 0);
     background: linear-gradient(
         0deg,

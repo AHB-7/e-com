@@ -3,20 +3,20 @@ import styled from "styled-components";
 export const Container = styled.div`
     display: flex;
     width: 100%;
-    margin-width: 1000px;
+    margin-width: 63rem;
     margin: 0 auto;
 `;
 
 export const ProductPageContainer = styled.div`
     display: flex;
     width: 100%;
-    margin-width: 1000px;
+    margin-width: 63rem;
     margin: 0 auto;
     flex-direction: column;
 `;
 export const ContactPageContainer = styled.div`
     width: 100%;
-    max-width: 1000px;
+    max-width: 63rem;
     display: grid;
     justify-content: center;
     align-items: center;
@@ -50,7 +50,7 @@ export const ContactPageContainer = styled.div`
         div > textarea {
             width: 100%;
             padding: 0.4rem 0.3rem;
-            border: 2px solid #ccc;
+            border: 0.1rem solid #ccc;
             border-radius: 0.2rem;
             background-color: transparent;
         }

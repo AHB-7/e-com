@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { PrimaryBtn } from "../styles/single-product";
 import { useState } from "react";
 import { IoCloudDoneOutline } from "react-icons/io5";
-import { MessageSendtContainer, WrongMessage } from "../styles/container";
+import { MessageSendtContainer, WrongMessage } from "../styles/contact";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

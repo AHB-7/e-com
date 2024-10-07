@@ -5,7 +5,7 @@ import {
     BasketBtn,
     ItemsCounter,
 } from "../styles/navbar";
-import { Container as BaseContainer } from "../styles/container";
+import { Container as BaseContainer } from "../styles/contact";
 import styled from "styled-components";
 import { useShoppingCart } from "../context/shopping-card-context";
 import {

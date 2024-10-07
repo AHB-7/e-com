@@ -11,7 +11,7 @@ export const SingleProductPageContainer = styled.main`
     margin-top: 2rem;
     > img {
         width: 100%;
-        max-width: 600px;
+        max-width: 30rem;
         aspect-ratio: 1/1;
         object-fit: cover;
     }
@@ -19,7 +19,7 @@ export const SingleProductPageContainer = styled.main`
         grid-template-columns: 1fr;
         margin-top: 1rem;
         img {
-            max-width: 500px;
+            max-width: 30rem;
             margin: 0 auto;
         }
     }
@@ -35,16 +35,16 @@ export const ProductInfoContainer = styled.div`
     width: 100%;
     flex-wrap: wrap;
     margin: 0 auto;
-    max-width: 500px;
+    max-width: 30rem;
     gap: 2rem;
     > h1 {
         font-size: 2.5rem;
         margin: 1.2rem 0;
     }
 `;
-export const ProductDescription = styled.p`
+export const ProductDescription = styled.div`
     width: 100%;
-    max-width: 500px;
+    max-width:30rem
     margin: 1rem 0;
     font-size: 1.2rem;
 `;
@@ -83,7 +83,7 @@ export const ProductPrice = styled.div`
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    max-width: 500px;
+    max-width: 25rem;
     > div > h2 {
         font-size: 1.2rem;
     }

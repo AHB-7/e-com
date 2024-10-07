@@ -8,29 +8,29 @@ export const LoaderContainerFullPage = styled.div`
     align-items: center;
 `;
 export const LoaderContainer = styled.div`
-    width: 40px;
-    height: 40px;
+    width: 2.5rem;
+    height: 2.5rem;
     color: ${(props) => props.theme.colors.text};
     background: conic-gradient(
-            from -45deg at top 20px left 50%,
+            from -45deg at top 1.3rem left 50%,
             #0000,
             currentColor 1deg 90deg,
             #0000 91deg
         ),
         conic-gradient(
-            from 45deg at right 20px top 50%,
+            from 45deg at right 1.3rem top 50%,
             #0000,
             currentColor 1deg 90deg,
             #0000 91deg
         ),
         conic-gradient(
-            from 135deg at bottom 20px left 50%,
+            from 135deg at bottom 1.3rem left 50%,
             #0000,
             currentColor 1deg 90deg,
             #0000 91deg
         ),
         conic-gradient(
-            from -135deg at left 20px top 50%,
+            from -135deg at left 1.3rem top 50%,
             #0000,
             currentColor 1deg 90deg,
             #0000 91deg
@@ -39,8 +39,8 @@ export const LoaderContainer = styled.div`
 
     @keyframes l4 {
         50% {
-            width: 60px;
-            height: 60px;
+            width: 3.75rem;
+            height: 3.75rem;
             transform: rotate(180deg);
         }
         100% {

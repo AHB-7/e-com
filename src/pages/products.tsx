@@ -5,7 +5,7 @@ import { AllCards, SearchContainer } from "../styles/product-styling";
 import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
 import { useSearch } from "../hooks/search-context";
-import { ProductPageContainer } from "../styles/container";
+import { ProductPageContainer } from "../styles/contact";
 import { Loading } from "../components/loading";
 
 interface Product {

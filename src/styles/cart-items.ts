@@ -9,11 +9,11 @@ export const CartContainer = styled.div`
     gap: 1rem;
     padding: 1rem;
     background-color: ${({ theme }) => theme.colors.background};
-    border-radius: 5px;
-    width: 300px;
-    margin-right: 1rem;
+    border-radius: 0.3rem;
+    width: 22rem;
+    margin-right: 2rem;
     position: absolute;
-    height: 20rem;
+    height: 19rem;
     overflow-y: auto;
     top: 3rem;
     right: -1rem;
@@ -67,7 +67,7 @@ export const CartItemContainer = styled.div`
     flex-direction: column;
     align-items: start;
     padding: 0 0.5rem;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 0.1rem solid #ccc;
     gap: 0.5rem;
     :first-child {
         display: flex;
@@ -78,7 +78,7 @@ export const CartItemContainer = styled.div`
         width: 6rem;
         aspect-ratio: 1/1;
         object-fit: cover;
-        border-radius: 5px;
+        border-radius: 0.4rem;
     }
     > div > div {
         display: flex;

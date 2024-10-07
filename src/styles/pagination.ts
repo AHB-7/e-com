@@ -5,7 +5,7 @@ export const PaginationContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    max-width: 300px;
+    max-width: 18.75rem;
     grid-column: 1 / -1;
     margin: 0 auto;
 `;
