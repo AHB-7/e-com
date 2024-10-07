@@ -11,6 +11,7 @@ export const AllCards = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
     }
     margin: 2rem auto;
+    padding: 0 0.5rem;
     width: 97%;
 `;
 export const SearchContainer = styled.div`
@@ -150,6 +151,10 @@ export const ItemRating = styled.div`
         order: 0;
     }
 `;
+
+export const AddToCardContainer = styled.div`
+    z-index: 50;
+`;
 export const AddToCardBtn = styled.button`
     background: ${(props) => props.theme.colors.text};
     width: 2rem;
@@ -167,6 +172,7 @@ export const AddToCardBtn = styled.button`
     &:hover {
         cursor: pointer;
     }
+    z-index: 50;
 `;
 export const Counter = styled.p`
     background: ${(props) => props.theme.colors.text};

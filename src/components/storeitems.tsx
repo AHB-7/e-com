@@ -1,6 +1,7 @@
 import { useShoppingCart } from "../context/shopping-card-context";
 import {
     AddToCardBtn,
+    AddToCardContainer,
     CardContainer,
     CardFooter,
     CardImage,
@@ -36,9 +37,8 @@ export function StoreItem({
     const { getItemsQuantity, increaseQuantity, decreaseQuantity } =
         useShoppingCart();
     const quantity = getItemsQuantity(id);
-
     return (
-        <div style={{ position: "relative" }}>
+        <div style={{ position: "relative", width: "fit-content" }}>
             <StyledLink to={`/products/${id}`} key={id} className="link">
                 <CardContainer>
                     <CardImage
@@ -46,6 +46,7 @@ export function StoreItem({
                         src={image.url}
                         alt={image.alt || "Product Image"}
                     />
+
                     <InfoContainer>
                         <CardTitle>{title}</CardTitle>
                         <CardFooter>
@@ -70,23 +71,8 @@ export function StoreItem({
                     </InfoContainer>
                 </CardContainer>
             </StyledLink>
-
-            {quantity === 0 ? (
-                <AddToCardBtn
-                    onClick={() =>
-                        increaseQuantity(
-                            id,
-                            title,
-                            price,
-                            image.url,
-                            discountedPrice
-                        )
-                    }
-                >
-                    +
-                </AddToCardBtn>
-            ) : (
-                <div>
+            <AddToCardContainer>
+                {quantity === 0 ? (
                     <AddToCardBtn
                         onClick={() =>
                             increaseQuantity(
@@ -100,15 +86,31 @@ export function StoreItem({
                     >
                         +
                     </AddToCardBtn>
-                    <Counter>{quantity}</Counter>
-                    <AddToCardBtn
-                        style={{ top: "4.6rem" }}
-                        onClick={() => decreaseQuantity(id)}
-                    >
-                        -
-                    </AddToCardBtn>
-                </div>
-            )}
+                ) : (
+                    <div>
+                        <AddToCardBtn
+                            onClick={() =>
+                                increaseQuantity(
+                                    id,
+                                    title,
+                                    price,
+                                    image.url,
+                                    discountedPrice
+                                )
+                            }
+                        >
+                            +
+                        </AddToCardBtn>
+                        <Counter>{quantity}</Counter>
+                        <AddToCardBtn
+                            style={{ top: "4.6rem" }}
+                            onClick={() => decreaseQuantity(id)}
+                        >
+                            -
+                        </AddToCardBtn>
+                    </div>
+                )}
+            </AddToCardContainer>
         </div>
     );
 }
