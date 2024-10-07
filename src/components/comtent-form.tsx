@@ -26,7 +26,7 @@ function ContentForm() {
         resolver: yupResolver(schema),
     });
 
-    function onSubmit(data) {
+    function onSubmit(data: { firstName: string; age?: number }) {
         console.log(data);
     }
 
