@@ -1,4 +1,5 @@
 import { useShoppingCart } from "../context/shopping-card-context";
+import { StorItemsContainer } from "../styles/contact";
 import {
     AddToCardBtn,
     AddToCardContainer,
@@ -38,7 +39,7 @@ export function StoreItem({
         useShoppingCart();
     const quantity = getItemsQuantity(id);
     return (
-        <div style={{ position: "relative", width: "fit-content" }}>
+        <StorItemsContainer>
             <StyledLink to={`/products/${id}`} key={id} className="link">
                 <CardContainer>
                     <CardImage
@@ -111,6 +112,6 @@ export function StoreItem({
                     </div>
                 )}
             </AddToCardContainer>
-        </div>
+        </StorItemsContainer>
     );
 }

@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+export const StorItemsContainer = styled.div`
+    position: relative;
+    width: fit-content;
+`;
 export const Container = styled.div`
     display: flex;
     width: 100%;
