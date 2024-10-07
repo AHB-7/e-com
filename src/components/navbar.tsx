@@ -16,12 +16,10 @@ import {
 import { CartItem } from "./cart-item";
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { useSearch } from "../hooks/search-context";
 import { PrimaryBtn } from "../styles/single-product";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {
-    const { setSearchQuery } = useSearch();
     const { cartItems, cartQuantity } = useShoppingCart();
     const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -35,13 +33,6 @@ export function Navbar() {
                 <NavbarLink as={NavLink} to="/contact">
                     Contact
                 </NavbarLink>
-                <form action="search">
-                    <input
-                        type="text"
-                        placeholder="Search"
-                        onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                </form>
             </NavbarSc>
             <CartElements>
                 <BasketBtn

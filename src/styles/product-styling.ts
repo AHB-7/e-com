@@ -11,8 +11,25 @@ export const AllCards = styled.div`
         grid-template-columns: repeat(auto-fit, minmax(48%, 1fr));
     }
     margin: 2rem auto;
-    padding: 0 0.5rem;
     width: 97%;
+`;
+export const SearchContainer = styled.div`
+    display: block;
+    width: 100%;
+    text-align: center;
+    > form {
+    }
+    > form > input {
+        padding: 0.2rem;
+        width: 80%;
+        border: none;
+        font-size: 1rem;
+        border-bottom: 0.1rem solid ${(props) => props.theme.colors.text};
+        background-color: transparent;
+    }
+    > form > input:focus {
+        outline: none;
+    }
 `;
 export const CardContainer = styled.div`
     border-radius: 0.5rem;

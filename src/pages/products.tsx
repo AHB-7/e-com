@@ -1,10 +1,11 @@
 import { useState } from "react";
 import { StoreItem } from "../components/storeitems";
 import useFetch from "../hooks/fetch";
-import { AllCards } from "../styles/product-styling";
+import { AllCards, SearchContainer } from "../styles/product-styling";
 import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
 import { useSearch } from "../hooks/search-context";
+import { ProductPageContainer } from "../styles/container";
 
 interface Product {
     id: number;
@@ -20,7 +21,7 @@ interface Product {
 }
 
 export function Products() {
-    const { searchQuery } = useSearch();
+    const { setSearchQuery, searchQuery } = useSearch();
     const [page, setPage] = useState(1);
     const limit = 9;
 
@@ -49,21 +50,33 @@ export function Products() {
         return <div>Error fetching products. Please try again later.</div>;
 
     return (
-        <AllCards>
-            {filteredData?.map((item: Product) => (
-                <StoreItem key={item.id} {...item} />
-            ))}
-
-            {!searchQuery && (
-                <PaginationContainer>
-                    <Pagination
-                        currentPage={page}
-                        onNext={handleNextPage}
-                        onPrevious={handlePreviousPage}
-                        isLastPage={isLastPage}
+        <ProductPageContainer>
+            <SearchContainer>
+                <form action="search">
+                    <input
+                        type="text"
+                        placeholder="Search"
+                        onChange={(e) => setSearchQuery(e.target.value)}
                     />
-                </PaginationContainer>
-            )}
-        </AllCards>
+                </form>
+            </SearchContainer>
+
+            <AllCards>
+                {filteredData?.map((item: Product) => (
+                    <StoreItem key={item.id} {...item} />
+                ))}
+
+                {!searchQuery && (
+                    <PaginationContainer>
+                        <Pagination
+                            currentPage={page}
+                            onNext={handleNextPage}
+                            onPrevious={handlePreviousPage}
+                            isLastPage={isLastPage}
+                        />
+                    </PaginationContainer>
+                )}
+            </AllCards>
+        </ProductPageContainer>
     );
 }
