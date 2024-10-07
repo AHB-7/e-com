@@ -7,6 +7,9 @@ export const baseTheme = {
         warning: "#ff9800",
         background: "#FAF7F0",
         text: "#1E201E",
+        scrollbarThumb: "#1E201E",
+        scrollbarThumbHover: "#313331",
+        scrollbarTrack: "#E0E0E0",
     },
     fontSizes: {
         small: "0.7em",
@@ -44,4 +47,26 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     text-decoration: none;
   }
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: ${({ theme }) => theme.colors.scrollbarTrack}; 
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: ${({ theme }) => theme.colors.scrollbarThumb}; 
+    border-radius: 10px; 
+    border: 2px solid transparent; 
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background-color: ${({ theme }) => theme.colors.scrollbarThumbHover};
+  }
+
+  scrollbar-color: ${({ theme }) => theme.colors.scrollbarThumb} ${({
+    theme,
+}) => theme.colors.scrollbarTrack}; 
+  scrollbar-width: thin;
 `;

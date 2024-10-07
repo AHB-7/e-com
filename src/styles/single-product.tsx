@@ -6,7 +6,7 @@ export const SingleProductPageContainer = styled.main`
     gap: 1rem;
     width: 100%;
     padding: 0.51rem;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     margin-top: 2rem;
     > img {
@@ -36,6 +36,7 @@ export const ProductInfoContainer = styled.div`
     flex-wrap: wrap;
     margin: 0 auto;
     max-width: 500px;
+    gap: 2rem;
     > h1 {
         font-size: 2.5rem;
         margin: 1.2rem 0;
@@ -60,6 +61,21 @@ export const PrimaryBtn = styled.button`
         &:hover {
             opacity: 0.9;
         `;
+export const PrimaryBtnOutlined = styled.button`
+        border: none;
+        background-color: transparent;
+        color: ${(props) => props.theme.colors.text};
+        border: 0.1rem solid ${(props) => props.theme.colors.text};
+        padding: 0.5rem 2rem;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: 0.3s ease;
+        border-radius: 0.2rem;
+        margin-right: 0.2rem;
+        &:hover {
+            opacity: 0.5;
+        `;
+
 export const ProductPrice = styled.div`
     display: flex;
     justify-content: space-between;
