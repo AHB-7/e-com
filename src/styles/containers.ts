@@ -10,6 +10,32 @@ export const Container = styled.div`
     margin-width: 63rem;
     margin: 0 auto;
 `;
+export const CheckOutContainer = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    width: 100%;
+    padding: 2rem;
+    margin: 0 auto;
+    max-width: 30rem;
+    > div:nth-child(1) {
+        width: 100%;
+        flex-direction: column;
+        display: flex;
+    }
+    > div:nth-child(2) {
+        width: 100%;
+        flex-direction: column;
+        margin-top: auto;
+        display: flex;
+        gap: 1rem;
+        > h2 {
+            text-align: end;
+        }
+    }
+`;
 
 export const ProductPageContainer = styled.div`
     display: flex;

@@ -4,7 +4,7 @@ import * as yup from "yup";
 import { PrimaryBtn } from "../styles/single-product";
 import { useState } from "react";
 import { IoCloudDoneOutline } from "react-icons/io5";
-import { MessageSendtContainer, WrongMessage } from "../styles/contact";
+import { MessageSendtContainer, WrongMessage } from "../styles/containers";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
@@ -34,6 +34,7 @@ function ContentForm() {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors, isSubmitSuccessful },
     } = useForm({
         resolver: yupResolver(schema),
@@ -44,6 +45,7 @@ function ContentForm() {
     function onSubmit(data: { firstName: string; age?: number }) {
         console.log(data);
         setIsSubmitted(true);
+        reset();
     }
 
     return (

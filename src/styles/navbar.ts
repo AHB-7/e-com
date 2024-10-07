@@ -41,3 +41,12 @@ export const ItemsCounter = styled.span`
     align-items: center;
     z-index: -1;
 `;
+export const CheckOutBtn = styled.a`
+    z-index: 100;
+    font-size: 1.9rem;
+    margin-right: 0.5rem;
+    color: darkgreen;
+    :hover {
+        color: green;
+    }
+`;

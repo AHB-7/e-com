@@ -27,6 +27,7 @@ type ShoppingCartContextValue = {
     ) => void;
     decreaseQuantity: (id: number) => void;
     deleteQuantity: (id: number) => void;
+    clearCart: () => void;
 };
 
 const ShoppingCartContext = createContext({} as ShoppingCartContextValue);
@@ -104,6 +105,10 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
         });
     }
 
+    function clearCart() {
+        setCartItems([]);
+    }
+
     return (
         <ShoppingCartContext.Provider
             value={{
@@ -113,6 +118,7 @@ export function ShoppingCartProvider({ children }: ShoppingCartProviderProps) {
                 increaseQuantity,
                 decreaseQuantity,
                 deleteQuantity,
+                clearCart,
             }}
         >
             {children}

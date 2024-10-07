@@ -1,11 +1,12 @@
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import {
     Navbar as NavbarSc,
     NavbarLink,
     BasketBtn,
     ItemsCounter,
+    CheckOutBtn,
 } from "../styles/navbar";
-import { Container as BaseContainer } from "../styles/contact";
+import { Container as BaseContainer } from "../styles/containers";
 import styled from "styled-components";
 import { useShoppingCart } from "../context/shopping-card-context";
 import {
@@ -17,6 +18,7 @@ import { CartItem } from "./cart-item";
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { PrimaryBtn } from "../styles/single-product";
+import { MdShoppingCartCheckout } from "react-icons/md";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {
@@ -45,6 +47,11 @@ export function Navbar() {
                         <ItemsCounter>{cartQuantity}</ItemsCounter>
                     )}
                 </BasketBtn>
+                {cartQuantity > 0 && (
+                    <CheckOutBtn as={Link} to="/checkout">
+                        <MdShoppingCartCheckout />
+                    </CheckOutBtn>
+                )}
                 {isCartOpen === true ? (
                     <CartContainer>
                         <CartTitleContainer>
@@ -88,7 +95,9 @@ export function Navbar() {
                                         )
                                         .toFixed(2)}
                                 </h5>
-                                <PrimaryBtn>Checkout</PrimaryBtn>
+                                <PrimaryBtn as={Link} to="/checkout">
+                                    Checkout
+                                </PrimaryBtn>
                             </>
                         ) : null}
                     </CartContainer>

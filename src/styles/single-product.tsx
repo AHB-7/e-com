@@ -58,6 +58,7 @@ export const PrimaryBtn = styled.button`
         cursor: pointer;
         transition: 0.3s ease;
         border-radius: 0.2rem;
+        text-align: center;
         &:hover {
             opacity: 0.9;
         `;

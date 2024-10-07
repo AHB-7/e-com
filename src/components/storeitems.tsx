@@ -1,5 +1,5 @@
 import { useShoppingCart } from "../context/shopping-card-context";
-import { StorItemsContainer } from "../styles/contact";
+import { StorItemsContainer } from "../styles/containers";
 import {
     AddToCardBtn,
     AddToCardContainer,

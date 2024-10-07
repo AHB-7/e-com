@@ -10,7 +10,7 @@ export const CartContainer = styled.div`
     padding: 1rem;
     background-color: ${({ theme }) => theme.colors.background};
     border-radius: 0.3rem;
-    width: 22rem;
+    width: 19rem;
     margin-right: 2rem;
     position: absolute;
     height: 19rem;
