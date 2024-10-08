@@ -1,4 +1,4 @@
-import { useShoppingCart } from "../context/shopping-card-context";
+import { useShoppingCartStore } from "../context/shopping-card-context";
 import { CartItem } from "./cart-item";
 import { PrimaryBtn } from "../styles/single-product";
 import { Link } from "react-router-dom";
@@ -6,7 +6,7 @@ import { CheckOutContainer } from "../styles/containers";
 import { useState } from "react";
 
 export function Checkout() {
-    const { cartItems, clearCart } = useShoppingCart(); // Assuming `clearCart` is a method in your context
+    const { cartItems, clearCart } = useShoppingCartStore();
     const [successMessage, setSuccessMessage] = useState(false);
 
     const handleCheckout = () => {

@@ -1,13 +1,11 @@
-import { createContext, useContext } from "react";
+import { create } from "zustand";
 
-export const SearchContext = createContext<{
+type SearchState = {
     searchQuery: string;
-    setSearchQuery: React.Dispatch<React.SetStateAction<string>>;
-}>({
-    searchQuery: "",
-    setSearchQuery: () => {},
-});
+    setSearchQuery: (query: string) => void;
+};
 
-export function useSearch() {
-    return useContext(SearchContext);
-}
+export const useSearchStore = create<SearchState>((set) => ({
+    searchQuery: "",
+    setSearchQuery: (query) => set({ searchQuery: query }),
+}));

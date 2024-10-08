@@ -10,8 +10,8 @@ import {
     SingleProductPageContainer,
 } from "../styles/single-product";
 import { ItemRating } from "../styles/product-styling";
-import { useShoppingCart } from "../context/shopping-card-context";
 import { Loading } from "./loading";
+import { useShoppingCartStore } from "../context/shopping-card-context";
 
 interface Product {
     id: number;
@@ -31,7 +31,7 @@ interface Product {
 
 export default function SingleProductPage() {
     const { increaseQuantity, decreaseQuantity, getItemsQuantity } =
-        useShoppingCart();
+        useShoppingCartStore();
 
     const { productId } = useParams<{ productId: string }>();
     const [product, setProduct] = useState<Product | null>(null);

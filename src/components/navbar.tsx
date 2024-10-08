@@ -8,7 +8,6 @@ import {
 } from "../styles/navbar";
 import { Container as BaseContainer } from "../styles/containers";
 import styled from "styled-components";
-import { useShoppingCart } from "../context/shopping-card-context";
 import {
     CartContainer,
     CartElements,
@@ -19,10 +18,11 @@ import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
 import { PrimaryBtn } from "../styles/single-product";
 import { MdShoppingCartCheckout } from "react-icons/md";
+import { useShoppingCartStore } from "../context/shopping-card-context";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {
-    const { cartItems, cartQuantity } = useShoppingCart();
+    const { cartItems, cartQuantity } = useShoppingCartStore();
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     const toggleCart = () => setIsCartOpen(!isCartOpen);

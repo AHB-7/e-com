@@ -1,5 +1,4 @@
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { useShoppingCart } from "../context/shopping-card-context";
 import {
     CartItemContainer,
     CounterController,
@@ -7,6 +6,7 @@ import {
     RemoveButton,
     SubtotalContainer,
 } from "../styles/cart-items";
+import { useShoppingCartStore } from "../context/shopping-card-context";
 
 type CartItemProps = {
     id: number;
@@ -26,7 +26,8 @@ export function CartItem({
     quantity,
 }: CartItemProps) {
     const { increaseQuantity, decreaseQuantity, deleteQuantity } =
-        useShoppingCart();
+        useShoppingCartStore();
+
     const finalPrice = discountedPrice === price ? price : discountedPrice;
 
     return (

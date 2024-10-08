@@ -1,4 +1,4 @@
-import { useShoppingCart } from "../context/shopping-card-context";
+import { useShoppingCartStore } from "../context/shopping-card-context";
 import { StorItemsContainer } from "../styles/containers";
 import {
     AddToCardBtn,
@@ -35,8 +35,9 @@ export function StoreItem({
     rating,
     discountedPrice,
 }: Product) {
-    const { getItemsQuantity, increaseQuantity, decreaseQuantity } =
-        useShoppingCart();
+    const { increaseQuantity, decreaseQuantity, getItemsQuantity } =
+        useShoppingCartStore();
+
     const quantity = getItemsQuantity(id);
     return (
         <StorItemsContainer>

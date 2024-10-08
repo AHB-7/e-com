@@ -4,9 +4,9 @@ import useFetch from "../hooks/fetch";
 import { AllCards, SearchContainer } from "../styles/product-styling";
 import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
-import { useSearch } from "../hooks/search-context";
 import { ProductPageContainer } from "../styles/containers";
 import { Loading } from "../components/loading";
+import { useSearchStore } from "../hooks/search-context";
 
 interface Product {
     id: number;
@@ -22,13 +22,13 @@ interface Product {
 }
 
 export function Products() {
-    const { setSearchQuery, searchQuery } = useSearch();
+    const { searchQuery, setSearchQuery } = useSearchStore();
     const [page, setPage] = useState(1);
     const limit = 9;
 
     const fetchUrl = searchQuery
-        ? `https://v2.api.noroff.dev/online-shop` // Fetch all items if searchQuery is present
-        : `https://v2.api.noroff.dev/online-shop?limit=${limit}&page=${page}`; // Paginated fetch when no search query
+        ? `https://v2.api.noroff.dev/online-shop`
+        : `https://v2.api.noroff.dev/online-shop?limit=${limit}&page=${page}`;
 
     const { data, loading, error } = useFetch<Product[]>(fetchUrl);
 
