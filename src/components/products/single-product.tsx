@@ -8,10 +8,10 @@ import {
     ProductPrice,
     ProductRatingContainer,
     SingleProductPageContainer,
-} from "../styles/single-product";
-import { ItemRating } from "../styles/product-styling";
-import { Loading } from "./loading";
-import { useShoppingCartStore } from "../context/shopping-card-context";
+} from "../../styles/products/single-product";
+import { ItemRating } from "../../styles/products/product-styling";
+import { Loading } from "../loading";
+import { useShoppingCartStore } from "../../hooks/shopping-card-context";
 
 interface Product {
     id: number;

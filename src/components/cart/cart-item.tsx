@@ -5,8 +5,9 @@ import {
     EncDecButton,
     RemoveButton,
     SubtotalContainer,
-} from "../styles/cart-items";
-import { useShoppingCartStore } from "../context/shopping-card-context";
+} from "../../styles/products/cart-items";
+import { useShoppingCartStore } from "../../hooks/shopping-card-context";
+import { Link } from "react-router-dom";
 
 type CartItemProps = {
     id: number;
@@ -33,9 +34,13 @@ export function CartItem({
     return (
         <CartItemContainer>
             <div>
-                <img src={imageUrl} alt={title} />
+                <Link to={`/products/${id}`}>
+                    <img src={imageUrl} alt={title} />
+                </Link>
                 <div>
-                    <h4>{title}</h4>
+                    <Link to={`/products/${id}`}>
+                        <h4>{title}</h4>
+                    </Link>
                     <CounterController>
                         <EncDecButton onClick={() => decreaseQuantity(id)}>
                             -

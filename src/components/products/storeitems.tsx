@@ -1,5 +1,5 @@
-import { useShoppingCartStore } from "../context/shopping-card-context";
-import { StorItemsContainer } from "../styles/containers";
+import { useShoppingCartStore } from "../../hooks/shopping-card-context";
+import { StorItemsContainer } from "../../styles/contact/containers";
 import {
     AddToCardBtn,
     AddToCardContainer,
@@ -12,7 +12,7 @@ import {
     ItemRating,
     PriceContainer,
     StyledLink,
-} from "../styles/product-styling";
+} from "../../styles/products/product-styling";
 
 export interface Product {
     id: number;

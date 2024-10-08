@@ -1,8 +1,8 @@
-import { useShoppingCartStore } from "../context/shopping-card-context";
-import { CartItem } from "./cart-item";
-import { PrimaryBtn } from "../styles/single-product";
+import { useShoppingCartStore } from "../../hooks/shopping-card-context";
+import { CartItem } from "../cart/cart-item";
+import { PrimaryBtn } from "../../styles/products/single-product";
 import { Link } from "react-router-dom";
-import { CheckOutContainer } from "../styles/containers";
+import { CheckOutContainer } from "../../styles/contact/containers";
 import { useState } from "react";
 
 export function Checkout() {

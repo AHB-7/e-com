@@ -6,19 +6,19 @@ import {
     ItemsCounter,
     CheckOutBtn,
 } from "../styles/navbar";
-import { Container as BaseContainer } from "../styles/containers";
+import { Container as BaseContainer } from "../styles/contact/containers";
 import styled from "styled-components";
 import {
     CartContainer,
     CartElements,
     CartTitleContainer,
-} from "../styles/cart-items";
-import { CartItem } from "./cart-item";
+} from "../styles/products/cart-items";
+import { CartItem } from "./cart/cart-item";
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { PrimaryBtn } from "../styles/single-product";
+import { PrimaryBtn } from "../styles/products/single-product";
 import { MdShoppingCartCheckout } from "react-icons/md";
-import { useShoppingCartStore } from "../context/shopping-card-context";
+import { useShoppingCartStore } from "../hooks/shopping-card-context";
 
 const Container = styled(BaseContainer)``;
 export function Navbar() {

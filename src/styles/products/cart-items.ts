@@ -74,7 +74,7 @@ export const CartItemContainer = styled.div`
         align-items: center;
         gap: 0.5rem;
     }
-    > div > img {
+    > div > a > img {
         width: 6rem;
         aspect-ratio: 1/1;
         object-fit: cover;

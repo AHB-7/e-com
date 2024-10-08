@@ -1,10 +1,10 @@
 import { useState } from "react";
-import { StoreItem } from "../components/storeitems";
+import { StoreItem } from "../components/products/storeitems";
 import useFetch from "../hooks/fetch";
-import { AllCards, SearchContainer } from "../styles/product-styling";
+import { AllCards, SearchContainer } from "../styles/products/product-styling";
 import Pagination from "../components/pagination";
 import { PaginationContainer } from "../styles/pagination";
-import { ProductPageContainer } from "../styles/containers";
+import { ProductPageContainer } from "../styles/contact/containers";
 import { Loading } from "../components/loading";
 import { useSearchStore } from "../hooks/search-context";
 
