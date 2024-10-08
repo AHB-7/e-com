@@ -53,14 +53,14 @@ Before you begin, ensure you have the following tools installed:
 
 1.  **Clone the repository:**
 
-    ```bash
+    ```
     git clone https://github.com/AHB-7/e-com.git
     cd e-com
     ```
 
 2.  **Install dependencies:**
 
-        ````bash
+        ```
         npm install
         ```
         Or if you're using yarn:
@@ -75,10 +75,9 @@ Once the dependencies are installed, you can run the project locally.
 
 ```
 npm run dev
-
 ```
 
-or
+Or if you're using yarn:
 
 ```
 yarn dev
@@ -94,7 +93,7 @@ To build the app for production:
 npm run build
 ```
 
-or
+Or if you're using yarn:
 
 ```
 yarn build
