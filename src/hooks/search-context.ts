@@ -8,5 +8,4 @@ type SearchState = {
 export const useSearchStore = create<SearchState>((set) => ({
     searchQuery: "",
     setSearchQuery: (query) => set({ searchQuery: query }),
-    
 }));

@@ -45,7 +45,9 @@ export function Products() {
     const handlePreviousPage = () => {
         setPage((prevPage) => Math.max(prevPage - 1, 1));
     };
-
+    const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+        e.preventDefault();
+    };
     if (loading) return <Loading />;
     if (error)
         return <div>Error fetching products. Please try again later.</div>;
@@ -53,7 +55,7 @@ export function Products() {
     return (
         <ProductPageContainer>
             <SearchContainer>
-                <form action="search">
+                <form action="search" onSubmit={handleSubmit}>
                     <input
                         type="text"
                         placeholder="Search"

@@ -29,7 +29,7 @@ const schema = yup
         message: yup
             .string()
             .required("Please enter a message")
-            .min(3, "Message should be at least 10 characters."),
+            .min(3, "Message should be at least 3 characters."),
     })
     .required();
 

@@ -78,9 +78,11 @@ export default function SingleProductPage() {
                         ) : (
                             <>
                                 <h2>
-                                    Before: <s>${product.price}</s>
+                                    ${product.discountedPrice}
+                                    <span>
+                                        <s>${product.price}</s>
+                                    </span>
                                 </h2>
-                                <h2>Now : ${product.discountedPrice}</h2>{" "}
                             </>
                         )}
                     </div>

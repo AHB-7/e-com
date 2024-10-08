@@ -24,6 +24,10 @@ export const CheckOutContainer = styled.div`
         width: 100%;
         flex-direction: column;
         display: flex;
+        h2 {
+            text-align: end;
+            margin: 1rem 0;
+        }
     }
     > div:nth-child(2) {
         width: 100%;
@@ -31,9 +35,6 @@ export const CheckOutContainer = styled.div`
         margin-top: auto;
         display: flex;
         gap: 1rem;
-        > h2 {
-            text-align: end;
-        }
     }
 `;
 
@@ -93,6 +94,7 @@ export const WrongMessage = styled.p`
 export const MessageSendtContainer = styled.div`
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     height: 100%;
     width: 100%;

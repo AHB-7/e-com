@@ -15,7 +15,7 @@ export const SingleProductPageContainer = styled.main`
         aspect-ratio: 1/1;
         object-fit: cover;
     }
-    @media (max-width: ${(props) => props.theme.breakpoints.small}) {
+    @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
         grid-template-columns: 1fr;
         margin-top: 1rem;
         img {
@@ -80,13 +80,24 @@ export const PrimaryBtnOutlined = styled.button`
 export const ProductPrice = styled.div`
     display: flex;
     justify-content: space-between;
+    @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
+        :nth-child(2) {
+            margin-left: auto;
+        }
+    }
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
     width: 100%;
-    max-width: 25rem;
+    max-width: 28rem;
     > div > h2 {
         font-size: 1.2rem;
+        > span {
+            color: red;
+            font-size: 0.8rem;
+            margin-left: 0.7rem;
+            text-align: end;
+        }
     }
 
     > div > p {
