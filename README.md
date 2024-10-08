@@ -106,7 +106,6 @@ The production build will be created in the dist/ folder.
 -   npm run dev: Starts the development server.
 -   npm run build: Builds the app for production.
 -   npm run lint: Runs ESLint to check for linting errors.
--   npm run format: Formats code using Prettier.
 -   npm run preview: Previews the production build locally.
 
 ## Contributing
