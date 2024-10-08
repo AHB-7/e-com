@@ -19,11 +19,11 @@ An e-commerce web application built with React, TypeScript, and Vite. This proje
 
 ## Overview
 
-This project is a fully functional e-commerce web application built using modern front-end technologies. Users can search for products, filter through categories, and manage a shopping cart, with real-time updates using Zustand for state management.
+This project is a fully functional e-commerce web application built using modern front-end technologies. Users can search for products and manage a shopping cart, with real-time updates using Zustand for state management.
 
 ## Features
 
--   Product listing and filtering.
+-   Product listing.
 -   Search functionality for products.
 -   Add/remove products from the shopping cart.
 -   Persist cart state across sessions using `localStorage`.
