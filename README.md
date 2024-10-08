@@ -14,6 +14,7 @@ An e-commerce web application built with React, TypeScript, and Vite. This proje
 -   [Folder Structure](#folder-structure)
 -   [Scripts](#scripts)
 -   [Contributing](#contributing)
+-   [Steps](#steps)
 
 ---
 
