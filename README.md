@@ -1,50 +1,122 @@
-# React + TypeScript + Vite
+# E-Commerce Website
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An e-commerce web application built with React, TypeScript, and Vite. This project allows users to browse products, search for items, and manage their shopping cart, all with efficient state management using Zustand.
 
-Currently, two official plugins are available:
+## Table of Contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [Overview](#overview)
+-   [Features](#features)
+-   [Technologies Used](#technologies-used)
+-   [Getting Started](#getting-started)
+    -   [Prerequisites](#prerequisites)
+    -   [Installation](#installation)
+    -   [Running the Project](#running-the-project)
+-   [Folder Structure](#folder-structure)
+-   [Scripts](#scripts)
+-   [Contributing](#contributing)
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Overview
 
-- Configure the top-level `parserOptions` property like this:
+This project is a fully functional e-commerce web application built using modern front-end technologies. Users can search for products, filter through categories, and manage a shopping cart, with real-time updates using Zustand for state management.
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+## Features
+
+-   Product listing and filtering.
+-   Search functionality for products.
+-   Add/remove products from the shopping cart.
+-   Persist cart state across sessions using `localStorage`.
+-   Responsive design with styled-components for custom styles.
+-   Form validation using Yup.
+
+## Technologies Used
+
+-   **React**: For building the user interface.
+-   **TypeScript**: For static type checking and better developer experience.
+-   **Vite**: For fast development with a modern build setup.
+-   **Zustand**: For state management, managing the shopping cart, and global state.
+-   **Styled-components**: For styling components with tagged template literals.
+-   **ESLint**: For code linting and formatting.
+-   **Yup**: For schema-based form validation.
+
+## Getting Started
+
+### Prerequisites
+
+Before you begin, ensure you have the following tools installed:
+
+-   [Node.js](https://nodejs.org/) (version 14 or higher)
+-   [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
+
+### Installation
+
+1.  **Clone the repository:**
+
+    ```bash
+    git clone https://github.com/AHB-7/e-com.git
+    cd e-com
+    ```
+
+2.  **Install dependencies:**
+
+        ````bash
+        npm install
+        ```
+        Or if you're using yarn:
+
+        ```
+        yarn install
+        ```
+
+### Running the Project
+
+Once the dependencies are installed, you can run the project locally.
+
+```
+npm run dev
+
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+or
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
 ```
+yarn dev
+```
+
+Then click on the localhost link: http://localhost:5173/
+
+### Build the Project for Production
+
+To build the app for production:
+
+```
+npm run build
+```
+
+or
+
+```
+yarn build
+```
+
+The production build will be created in the dist/ folder.
+
+## Scripts
+
+-   npm run dev: Starts the development server.
+-   npm run build: Builds the app for production.
+-   npm run lint: Runs ESLint to check for linting errors.
+-   npm run format: Formats code using Prettier.
+-   npm run preview: Previews the production build locally.
+
+## Contributing
+
+Contributions are welcome! If you'd like to contribute, please fork the repository and create a pull request.
+
+## Steps:
+
+Fork the repository.
+Create a new branch for your feature or bugfix.
+Make your changes and commit them with clear and descriptive messages.
+Push your changes and submit a pull request.
