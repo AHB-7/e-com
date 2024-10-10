@@ -160,7 +160,6 @@ export const ItemRating = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: gold;
     font-size: ${(props) => props.theme.fontSizes.large};
     z-index: 1;
     @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
