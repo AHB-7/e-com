@@ -1,5 +1,5 @@
 import ContentForm from "../components/contact&checkout/contact-form";
-import { ContactPageContainer } from "../styles/contact/containers";
+import { ContactPageContainer } from "../styles/layoutes/contact/containers";
 
 export function Contact() {
     return (

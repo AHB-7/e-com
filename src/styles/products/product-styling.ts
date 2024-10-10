@@ -15,14 +15,30 @@ export const AllCards = styled.div`
     width: 97%;
 `;
 export const SearchContainer = styled.div`
-    display: block;
-    width: 100%;
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
     text-align: center;
+    > h1 {
+        font-size: 2rem;
+    }
+    @media (max-width: ${(props) => props.theme.breakpoints.medium}) {
+        flex-wrap: wrap;
+        justify-content: center;
+        padding: 0;
+    }
+    width: 100%;
+    padding: 0 2rem;
+    gap: 2rem;
     > form {
+        width: 100%;
+    }
+    > form > label > p {
+        display: none;
     }
     > form > input {
-        padding: 0.2rem;
         width: 80%;
+        padding: 0.2rem;
         border: none;
         font-size: 1rem;
         border-bottom: 0.1rem solid ${(props) => props.theme.colors.text};
@@ -109,7 +125,7 @@ export const CardFooter = styled.div`
     }
     transition: opacity 0.3s ease;
 `;
-export const PriceContainer = styled.h3`
+export const PriceContainer = styled.h2`
     padding: 1rem;
     display: flex;
     flex-direction: column-reverse;

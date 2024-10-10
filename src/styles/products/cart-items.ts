@@ -16,8 +16,9 @@ export const CartContainer = styled.div`
     height: 19rem;
     overflow-y: auto;
     top: 3rem;
-    right: -1rem;
+    right: -2rem;
     z-index: 100;
+    color: ${(props) => props.theme.colors.text};
     > h5 {
         text-align: right;
         font-size: 1.2rem;

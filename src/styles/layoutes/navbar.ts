@@ -7,10 +7,19 @@ export const Navbar = styled.nav`
     flex-wrap: wrap;
     gap: 1rem;
     color: white;
+    padding: 0 1rem;
+    margin-right: auto;
+`;
+export const NavLinksContainer = styled.div`
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    color: white;
     padding: 1rem;
     margin-right: auto;
 `;
-
 export const NavbarLink = styled.a`
     width: fit-content;
 `;

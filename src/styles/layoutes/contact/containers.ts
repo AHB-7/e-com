@@ -4,7 +4,7 @@ export const StorItemsContainer = styled.div`
     position: relative;
     width: fit-content;
 `;
-export const Container = styled.div`
+export const Container = styled.main`
     display: flex;
     width: 100%;
     margin-width: 63rem;
@@ -38,19 +38,20 @@ export const CheckOutContainer = styled.div`
     }
 `;
 
-export const ProductPageContainer = styled.div`
+export const ProductPageContainer = styled.section`
     display: flex;
     width: 100%;
     margin-width: 63rem;
     margin: 0 auto;
     flex-direction: column;
 `;
-export const ContactPageContainer = styled.div`
+export const ContactPageContainer = styled.section`
     width: 100%;
     max-width: 63rem;
     display: grid;
     justify-content: center;
     align-items: center;
+
     > h1 {
         font-size: 3rem;
         text-align: center;
@@ -61,7 +62,6 @@ export const ContactPageContainer = styled.div`
         align-items: center;
         justify-content: center;
         gap: 1rem;
-        height: 30rem;
         width: 25rem;
         @media (max-width: ${(props) => props.theme.breakpoints.small}) {
             width: 90vw;
@@ -73,7 +73,7 @@ export const ContactPageContainer = styled.div`
             aling-items: center;
             justify-content: center;
             width: 100%;
-            > h3 {
+            > label > h2 {
                 font-size: 1rem;
             }
         }
@@ -87,6 +87,7 @@ export const ContactPageContainer = styled.div`
         }
     }
 `;
+
 export const WrongMessage = styled.p`
     color: red;
     font-size: 0.8rem;

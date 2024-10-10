@@ -2,11 +2,11 @@ import { useState } from "react";
 import { StoreItem } from "../components/products/storeitems";
 import useFetch from "../hooks/fetch";
 import { AllCards, SearchContainer } from "../styles/products/product-styling";
-import Pagination from "../components/pagination";
-import { PaginationContainer } from "../styles/pagination";
-import { ProductPageContainer } from "../styles/contact/containers";
-import { Loading } from "../components/loading";
+import { PaginationContainer } from "../styles/layoutes/pagination";
+import { ProductPageContainer } from "../styles/layoutes/contact/containers";
 import { useSearchStore } from "../hooks/search-context";
+import { Loading } from "../components/layouts/loading";
+import Pagination from "../components/layouts/pagination";
 
 interface Product {
     id: number;
@@ -55,8 +55,14 @@ export function Products() {
     return (
         <ProductPageContainer>
             <SearchContainer>
+                <h1>Products</h1>
                 <form action="search" onSubmit={handleSubmit}>
+                    <label htmlFor="search">
+                        {" "}
+                        <p>search</p>
+                    </label>
                     <input
+                        id="search"
                         type="text"
                         placeholder="Search"
                         onChange={(e) => setSearchQuery(e.target.value)}

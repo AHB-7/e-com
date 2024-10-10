@@ -1,4 +1,7 @@
-import { LoaderContainer, LoaderContainerFullPage } from "../styles/loader";
+import {
+    LoaderContainer,
+    LoaderContainerFullPage,
+} from "../../styles/layoutes/loader";
 
 export function Loading() {
     return (

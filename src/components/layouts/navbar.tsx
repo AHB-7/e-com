@@ -5,37 +5,35 @@ import {
     BasketBtn,
     ItemsCounter,
     CheckOutBtn,
-} from "../styles/navbar";
-import { Container as BaseContainer } from "../styles/contact/containers";
-import styled from "styled-components";
+    NavLinksContainer,
+} from "../../styles/layoutes/navbar";
 import {
     CartContainer,
     CartElements,
     CartTitleContainer,
-} from "../styles/products/cart-items";
-import { CartItem } from "./cart/cart-item";
+} from "../../styles/products/cart-items";
+import { CartItem } from "../cart/cart-item";
 import { useState } from "react";
 import { IoCartOutline } from "react-icons/io5";
-import { PrimaryBtn } from "../styles/products/single-product";
+import { PrimaryBtn } from "../../styles/products/single-product";
 import { MdShoppingCartCheckout } from "react-icons/md";
-import { useShoppingCartStore } from "../hooks/shopping-card-context";
+import { useShoppingCartStore } from "../../hooks/shopping-card-context";
 
-const Container = styled(BaseContainer)``;
 export function Navbar() {
     const { cartItems, cartQuantity } = useShoppingCartStore();
     const [isCartOpen, setIsCartOpen] = useState(false);
 
     const toggleCart = () => setIsCartOpen(!isCartOpen);
     return (
-        <Container>
-            <NavbarSc>
+        <NavbarSc>
+            <NavLinksContainer>
                 <NavbarLink as={NavLink} to="/">
                     Home
                 </NavbarLink>
                 <NavbarLink as={NavLink} to="/contact">
                     Contact
                 </NavbarLink>
-            </NavbarSc>
+            </NavLinksContainer>
             <CartElements>
                 <BasketBtn
                     onClick={() => {
@@ -103,6 +101,6 @@ export function Navbar() {
                     </CartContainer>
                 ) : null}
             </CartElements>
-        </Container>
+        </NavbarSc>
     );
 }

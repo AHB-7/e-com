@@ -6,7 +6,7 @@ import { IoCloudDoneOutline } from "react-icons/io5";
 import {
     MessageSendtContainer,
     WrongMessage,
-} from "../../styles/contact/containers";
+} from "../../styles/layoutes/contact/containers";
 import { PrimaryBtn } from "../../styles/products/single-product";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
@@ -54,23 +54,34 @@ function ContentForm() {
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
             <div>
-                <h3>Full Name</h3>
-                <input {...register("firstName")} />
+                <label htmlFor="fullName">
+                    <h2>Full Name</h2>
+                </label>
+                <input {...register("firstName")} id="fullName" />
                 <WrongMessage>{errors.firstName?.message}</WrongMessage>
             </div>
             <div>
-                <h3>Email</h3>
-                <input {...register("email")} />
+                {" "}
+                <label htmlFor="email">
+                    <h2>Email</h2>
+                </label>
+                <input {...register("email")} id="email" />
                 <WrongMessage>{errors.email?.message}</WrongMessage>
             </div>
             <div>
-                <h3>Subject</h3>
-                <input {...register("subject")} />
+                <label htmlFor="subject">
+                    {" "}
+                    <h2>Subject</h2>
+                </label>
+                <input {...register("subject")} id="subject" />
                 <WrongMessage>{errors.subject?.message}</WrongMessage>
             </div>
             <div>
-                <h3>Message</h3>
-                <textarea {...register("message")} />
+                <label htmlFor="message">
+                    {" "}
+                    <h2>Message</h2>
+                </label>
+                <textarea {...register("message")} id="message" />
                 <WrongMessage>{errors.message?.message}</WrongMessage>
             </div>
             <PrimaryBtn type="submit">Checkout</PrimaryBtn>

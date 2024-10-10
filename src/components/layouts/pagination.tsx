@@ -1,6 +1,9 @@
 import React from "react";
 import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
-import { PaginationButtons, PaginationContainer } from "../styles/pagination";
+import {
+    PaginationButtons,
+    PaginationContainer,
+} from "../../styles/layoutes/pagination";
 
 interface PaginationProps {
     currentPage: number;

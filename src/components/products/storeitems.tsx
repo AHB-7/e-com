@@ -1,5 +1,5 @@
 import { useShoppingCartStore } from "../../hooks/shopping-card-context";
-import { StorItemsContainer } from "../../styles/contact/containers";
+import { StorItemsContainer } from "../../styles/layoutes/contact/containers";
 import {
     AddToCardBtn,
     AddToCardContainer,
@@ -9,10 +9,10 @@ import {
     CardTitle,
     Counter,
     InfoContainer,
-    ItemRating,
     PriceContainer,
     StyledLink,
 } from "../../styles/products/product-styling";
+import { Rating } from "../layouts/rating";
 
 export interface Product {
     id: number;
@@ -46,7 +46,7 @@ export function StoreItem({
                     <CardImage
                         as={"img"}
                         src={image.url}
-                        alt={image.alt || "Product Image"}
+                        alt={image.alt || title}
                     />
 
                     <InfoContainer>
@@ -54,21 +54,15 @@ export function StoreItem({
                         <CardFooter>
                             {price === discountedPrice ? (
                                 <PriceContainer>
-                                    <p>${price.toFixed(2)}</p>
+                                    <span>${price.toFixed(2)}</span>
                                 </PriceContainer>
                             ) : (
                                 <PriceContainer>
-                                    <p>${discountedPrice.toFixed(2)}</p>
-                                    <p>${price.toFixed(2)}</p>
+                                    <span>${discountedPrice.toFixed(2)}</span>
+                                    <span>${price.toFixed(2)}</span>
                                 </PriceContainer>
                             )}
-                            <ItemRating>
-                                {Array.from({ length: rating }).map(
-                                    (_, index) => (
-                                        <span key={index}>★</span>
-                                    )
-                                )}
-                            </ItemRating>
+                            <Rating rating={rating} />
                         </CardFooter>
                     </InfoContainer>
                 </CardContainer>

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import {
     CheckOutContainer,
     MessageSendtContainer,
-} from "../../styles/contact/containers";
+} from "../../styles/layoutes/contact/containers";
 import { useState } from "react";
 import { IoCloudDoneOutline } from "react-icons/io5";
 

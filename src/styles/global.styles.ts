@@ -33,6 +33,7 @@ export const GlobalStyle = createGlobalStyle`
     width: 100%;
     max-width: 63rem;
     margin: 0 auto;
+    height: 100vh;
   }
 
   * {
@@ -44,6 +45,8 @@ export const GlobalStyle = createGlobalStyle`
     color: ${({ theme }) => theme.colors.text};
     text-decoration: none;
   }
+
+
   ::-webkit-scrollbar {
     width: 0.6rem;
   }

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const SingleProductPageContainer = styled.main`
+export const SingleProductPageContainer = styled.section`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
@@ -27,7 +27,7 @@ export const SingleProductPageContainer = styled.main`
         border-radius: 0.5rem;
     }
 `;
-export const ProductInfoContainer = styled.div`
+export const ProductInfoContainer = styled.section`
     display: flex;
     justify-content: start;
     flex-direction: column;

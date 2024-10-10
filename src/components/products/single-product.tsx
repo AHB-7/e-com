@@ -9,9 +9,9 @@ import {
     ProductRatingContainer,
     SingleProductPageContainer,
 } from "../../styles/products/single-product";
-import { ItemRating } from "../../styles/products/product-styling";
-import { Loading } from "../loading";
 import { useShoppingCartStore } from "../../hooks/shopping-card-context";
+import { Loading } from "../layouts/loading";
+import { Rating } from "../layouts/rating";
 
 interface Product {
     id: number;
@@ -131,13 +131,7 @@ export default function SingleProductPage() {
                             <div key={review.id}>
                                 <div>
                                     <h3>{review.username}</h3>
-                                    <ItemRating>
-                                        {Array.from({
-                                            length: review.rating,
-                                        }).map((_, index) => (
-                                            <span key={index}>★</span>
-                                        ))}
-                                    </ItemRating>
+                                    <Rating rating={review.rating} />
                                 </div>
                                 <div>
                                     <p>{review.description}</p>
