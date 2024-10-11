@@ -14,8 +14,6 @@ import { Loading } from "../layouts/loading";
 import { Rating } from "../layouts/rating";
 import { MetaContent } from "../meta-content/meta";
 
-
-
 export default function SingleProductPage() {
     const { increaseQuantity, decreaseQuantity, getItemsQuantity } =
         useShoppingCartStore();
@@ -116,7 +114,7 @@ export default function SingleProductPage() {
                         </div>
                     )}
                 </ProductPrice>
-                {product.reviews.length > 0 ? (
+                {product.reviews && product.reviews.length > 0 ? (
                     <ProductRatingContainer>
                         <h2> Reviews </h2>
                         {product.reviews.map((review) => (
