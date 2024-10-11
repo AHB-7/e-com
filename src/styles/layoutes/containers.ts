@@ -16,7 +16,6 @@ export const CheckOutContainer = styled.div`
     align-items: center;
     flex-wrap: wrap;
     gap: 1rem;
-    width: 100%;
     padding: 2rem;
     margin: 0 auto;
     max-width: 30rem;

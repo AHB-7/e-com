@@ -7,7 +7,7 @@ export const Navbar = styled.nav`
     flex-wrap: wrap;
     gap: 1rem;
     color: white;
-    padding: 0 1rem;
+    padding: 0 0.2rem;
     margin-right: auto;
 `;
 export const NavLinksContainer = styled.div`

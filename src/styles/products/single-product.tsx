@@ -4,7 +4,6 @@ export const SingleProductPageContainer = styled.main`
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
-    width: 100%;
     padding: 0.51rem;
     align-items: start;
     justify-content: center;
