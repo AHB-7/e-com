@@ -4,14 +4,17 @@ import App from "./App.tsx";
 import { baseTheme, GlobalStyle } from "./styles/global.styles.ts";
 import { BrowserRouter } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
+import { HelmetProvider } from "react-helmet-async";
 
 createRoot(document.getElementById("root")!).render(
-    <StrictMode>
-        <ThemeProvider theme={baseTheme}>
-            <BrowserRouter>
-                <GlobalStyle />
-                <App />
-            </BrowserRouter>
-        </ThemeProvider>
-    </StrictMode>
+    <HelmetProvider>
+        <StrictMode>
+            <ThemeProvider theme={baseTheme}>
+                <BrowserRouter>
+                    <GlobalStyle />
+                    <App />
+                </BrowserRouter>
+            </ThemeProvider>
+        </StrictMode>
+    </HelmetProvider>
 );
