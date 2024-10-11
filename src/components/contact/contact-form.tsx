@@ -3,11 +3,9 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import { useState } from "react";
 import { IoCloudDoneOutline } from "react-icons/io5";
-import {
-    MessageSendtContainer,
-    WrongMessage,
-} from "../../styles/layoutes/contact/containers";
+
 import { PrimaryBtn } from "../../styles/products/single-product";
+import { MessageSendtContainer, WrongMessage } from "../../styles/contact/form";
 
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 

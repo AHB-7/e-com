@@ -3,14 +3,8 @@ import { CiCircleChevLeft, CiCircleChevRight } from "react-icons/ci";
 import {
     PaginationButtons,
     PaginationContainer,
-} from "../../styles/layoutes/pagination";
+} from "../../styles/products/pagination";
 
-interface PaginationProps {
-    currentPage: number;
-    onNext: () => void;
-    onPrevious: () => void;
-    isLastPage: boolean;
-}
 
 const Pagination: React.FC<PaginationProps> = ({
     currentPage,

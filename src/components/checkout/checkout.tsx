@@ -2,12 +2,11 @@ import { useShoppingCartStore } from "../../hooks/shopping-card-context";
 import { CartItem } from "../cart/cart-item";
 import { PrimaryBtn } from "../../styles/products/single-product";
 import { Link } from "react-router-dom";
-import {
-    CheckOutContainer,
-    MessageSendtContainer,
-} from "../../styles/layoutes/contact/containers";
+import { CheckOutContainer } from "../../styles/layoutes/containers";
 import { useState } from "react";
 import { IoCloudDoneOutline } from "react-icons/io5";
+import { MessageSendtContainer } from "../../styles/contact/form";
+import { MetaContent } from "../meta-content/meta";
 
 export function Checkout() {
     const { cartItems, clearCart } = useShoppingCartStore();
@@ -25,6 +24,11 @@ export function Checkout() {
 
     return (
         <CheckOutContainer>
+            <MetaContent
+                title="Checkout"
+                description="Check now to get the best deles on the market"
+                keywords="Checkout, buy, purchase, cart, shopping"
+            />
             <div>
                 {cartItems.length > 0 ? (
                     <>

@@ -12,22 +12,9 @@ import {
 import { useShoppingCartStore } from "../../hooks/shopping-card-context";
 import { Loading } from "../layouts/loading";
 import { Rating } from "../layouts/rating";
+import { MetaContent } from "../meta-content/meta";
 
-interface Product {
-    id: number;
-    title: string;
-    price: number;
-    discountedPrice: number;
-    rating: number;
-    description: string;
-    image: {
-        url: string;
-        alt?: string;
-    };
-    reviews: [
-        { rating: number; id: string; username: string; description: string }
-    ];
-}
+
 
 export default function SingleProductPage() {
     const { increaseQuantity, decreaseQuantity, getItemsQuantity } =
@@ -62,6 +49,11 @@ export default function SingleProductPage() {
     if (!product) return <div>No product found.</div>;
     return (
         <SingleProductPageContainer>
+            <MetaContent
+                title={product.title}
+                description={product.description}
+                keywords={product.description.split(" ").join(", ")}
+            />
             <img
                 src={product.image?.url || "https://via.placeholder.com/150"}
                 alt={product.image?.alt || product.title}

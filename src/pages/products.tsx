@@ -2,24 +2,12 @@ import { useState } from "react";
 import { StoreItem } from "../components/products/storeitems";
 import useFetch from "../hooks/fetch";
 import { AllCards, SearchContainer } from "../styles/products/product-styling";
-import { PaginationContainer } from "../styles/layoutes/pagination";
-import { ProductPageContainer } from "../styles/layoutes/contact/containers";
+import { PaginationContainer } from "../styles/products/pagination";
+import { ProductPageContainer } from "../styles/layoutes/containers";
 import { useSearchStore } from "../hooks/search-context";
 import { Loading } from "../components/layouts/loading";
 import Pagination from "../components/layouts/pagination";
-
-interface Product {
-    id: number;
-    title: string;
-    price: number;
-    discountedPrice: number;
-    rating: number;
-    image: {
-        url: string;
-        alt?: string;
-    };
-    description: string;
-}
+import { MetaContent } from "../components/meta-content/meta";
 
 export function Products() {
     const { searchQuery, setSearchQuery } = useSearchStore();
@@ -54,6 +42,11 @@ export function Products() {
 
     return (
         <ProductPageContainer>
+            <MetaContent
+                title="Products"
+                description="Browse our wide selection of high-quality products, including the latest trends and best deals. Shop now for fast shipping and secure checkout."
+                keywords="products, shop, online, store, buy, purchase, deals, discounts"
+            />
             <SearchContainer>
                 <h1>Products</h1>
                 <form action="search" onSubmit={handleSubmit}>
@@ -69,7 +62,6 @@ export function Products() {
                     />
                 </form>
             </SearchContainer>
-
             <AllCards>
                 {filteredData?.map((item: Product) => (
                     <StoreItem key={item.id} {...item} />

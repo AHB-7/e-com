@@ -27,10 +27,24 @@ export function Navbar() {
     return (
         <NavbarSc>
             <NavLinksContainer>
-                <NavbarLink as={NavLink} to="/">
+                <NavbarLink
+                    as={NavLink}
+                    to="/"
+                    style={({ isActive }) => ({
+                        color: isActive ? "darkgreen" : "black",
+                        fontWeight: isActive ? "bold" : "normal",
+                    })}
+                >
                     Home
                 </NavbarLink>
-                <NavbarLink as={NavLink} to="/contact">
+                <NavbarLink
+                    as={NavLink}
+                    to="/contact"
+                    style={({ isActive }) => ({
+                        color: isActive ? "darkgreen" : "black",
+                        fontWeight: isActive ? "bold" : "normal",
+                    })}
+                >
                     Contact
                 </NavbarLink>
             </NavLinksContainer>

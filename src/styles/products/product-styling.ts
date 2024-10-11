@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 
-export const AllCards = styled.div`
+export const AllCards = styled.section`
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
     align-items: center;
@@ -14,7 +14,7 @@ export const AllCards = styled.div`
     padding: 0 0.5rem;
     width: 97%;
 `;
-export const SearchContainer = styled.div`
+export const SearchContainer = styled.section`
     display: inline-flex;
     justify-content: space-between;
     align-items: center;

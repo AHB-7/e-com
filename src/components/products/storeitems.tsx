@@ -1,5 +1,5 @@
 import { useShoppingCartStore } from "../../hooks/shopping-card-context";
-import { StorItemsContainer } from "../../styles/layoutes/contact/containers";
+import { StorItemsContainer } from "../../styles/layoutes/containers";
 import {
     AddToCardBtn,
     AddToCardContainer,
@@ -14,18 +14,7 @@ import {
 } from "../../styles/products/product-styling";
 import { Rating } from "../layouts/rating";
 
-export interface Product {
-    id: number;
-    title: string;
-    price: number;
-    discountedPrice: number;
-    rating: number;
-    image: {
-        url: string;
-        alt?: string;
-    };
-    description: string;
-}
+
 
 export function StoreItem({
     id,

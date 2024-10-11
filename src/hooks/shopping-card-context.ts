@@ -1,31 +1,6 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 
-type CartItem = {
-    id: number;
-    quantity: number;
-    title: string;
-    price: number;
-    discountedPrice?: number;
-    imageUrl: string;
-};
-
-type ShoppingCartState = {
-    cartItems: CartItem[];
-    cartQuantity: number;
-    getItemsQuantity: (id: number) => number;
-    increaseQuantity: (
-        id: number,
-        title: string,
-        price: number,
-        imageUrl: string,
-        discountedPrice?: number
-    ) => void;
-    decreaseQuantity: (id: number) => void;
-    deleteQuantity: (id: number) => void;
-    clearCart: () => void;
-};
-
 export const useShoppingCartStore = create<ShoppingCartState>()(
     persist(
         (set, get) => ({

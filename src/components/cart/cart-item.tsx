@@ -9,15 +9,6 @@ import {
 import { useShoppingCartStore } from "../../hooks/shopping-card-context";
 import { Link } from "react-router-dom";
 
-type CartItemProps = {
-    id: number;
-    title: string;
-    price: number;
-    discountedPrice?: number;
-    imageUrl: string;
-    quantity: number;
-};
-
 export function CartItem({
     id,
     title,
