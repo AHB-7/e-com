@@ -59,7 +59,7 @@ export const SuggestionsDropdown = styled.ul`
     left: 0;
     margin-left: 4rem;
     list-style: none;
-    z-index: 1;
+    z-index: 14;
     > ul {
     }
     li {
@@ -211,7 +211,7 @@ export const AddToCardBtn = styled.button`
     &:hover {
         cursor: pointer;
     }
-    z-index: 50;
+    z-index: 12;
 `;
 export const Counter = styled.p`
     background: ${(props) => props.theme.colors.text};
