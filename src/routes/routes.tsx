@@ -3,6 +3,7 @@ import { Products } from "../pages/products";
 import SingleProductPage from "../components/products/single-product";
 import { Contact } from "../pages/contact";
 import { Checkout } from "../components/checkout/checkout";
+import { NotFound } from "../components/layouts/not-found";
 
 export function AppRouter() {
     return (
@@ -14,6 +15,7 @@ export function AppRouter() {
             />
             <Route path="/contact" element={<Contact />} />
             <Route path="/checkout" element={<Checkout />} />
+            <Route path="*" element={<NotFound />} />
         </Routes>
     );
 }

@@ -14,8 +14,6 @@ import {
 } from "../../styles/products/product-styling";
 import { Rating } from "../layouts/rating";
 
-
-
 export function StoreItem({
     id,
     title,

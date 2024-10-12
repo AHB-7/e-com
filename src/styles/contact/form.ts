@@ -4,6 +4,7 @@ export const ContactPageContainer = styled.main`
     width: 100%;
     max-width: 63rem;
     display: grid;
+    margin-top: 6rem;
     justify-content: center;
     align-items: center;
 
@@ -35,7 +36,7 @@ export const ContactPageContainer = styled.main`
         > div > input,
         div > textarea {
             width: 100%;
-            padding: 0.4rem 0.3rem;
+            padding: 0.4rem 0;
             border: 0.1rem solid #ccc;
             border-radius: 0.2rem;
             background-color: transparent;

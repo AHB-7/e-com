@@ -10,6 +10,26 @@ export const Container = styled.div`
     margin-width: 63rem;
     margin: 0 auto;
 `;
+export const NotFoundContainer = styled.div`
+    > h1 {
+        font-size: 5rem;
+    }
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    width: 100%;
+    margin-top: 10rem;
+    text-align: center;
+    > p {
+        font-size: 1.2rem;
+        max-width: 25rem;
+    }
+    @media (max-width: 600px) {
+        margin-top: 7rem;
+    }
+`;
 export const CheckOutContainer = styled.div`
     display: flex;
     justify-content: center;

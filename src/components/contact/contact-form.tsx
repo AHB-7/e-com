@@ -82,7 +82,11 @@ function ContentForm() {
                 <textarea {...register("message")} id="message" />
                 <WrongMessage>{errors.message?.message}</WrongMessage>
             </div>
-            <PrimaryBtn type="submit">Checkout</PrimaryBtn>
+            {!isSubmitSuccessful ? (
+                <PrimaryBtn type="submit">Send</PrimaryBtn>
+            ) : (
+                <p>Sendt</p>
+            )}
 
             {isSubmitSuccessful && isSubmitted && (
                 <MessageSendtContainer>
