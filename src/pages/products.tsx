@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { StoreItem } from "../components/products/storeitems";
 import useFetch from "../hooks/fetch";
-import { AllCards, SearchContainer } from "../styles/products/product-styling";
+import {
+    AllCards,
+    SearchContainer,
+    SuggestionsDropdown,
+} from "../styles/products/product-styling";
 import { PaginationContainer } from "../styles/products/pagination";
 import { ProductPageContainer } from "../styles/layoutes/containers";
 import { useSearchStore } from "../hooks/search-context";
@@ -11,6 +15,7 @@ import { MetaContent } from "../components/meta-content/meta";
 
 export function Products() {
     const { searchQuery, setSearchQuery } = useSearchStore();
+    const [suggestions, setSuggestions] = useState<Product[]>([]);
     const [page, setPage] = useState(1);
     const limit = 9;
 
@@ -26,6 +31,19 @@ export function Products() {
         product.title.toLowerCase().includes(searchQuery.toLowerCase())
     );
 
+    useEffect(() => {
+        if (searchQuery) {
+            const filteredSuggestions = data?.filter((product) =>
+                product.title
+                    .toLowerCase()
+                    .startsWith(searchQuery.toLowerCase())
+            );
+            setSuggestions(filteredSuggestions || []);
+        } else {
+            setSuggestions([]);
+        }
+    }, [searchQuery, data]);
+
     const handleNextPage = () => {
         if (!isLastPage) setPage((prevPage) => prevPage + 1);
     };
@@ -33,9 +51,16 @@ export function Products() {
     const handlePreviousPage = () => {
         setPage((prevPage) => Math.max(prevPage - 1, 1));
     };
+
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
     };
+
+    const handleSuggestionClick = (suggestion: string) => {
+        setSearchQuery(suggestion);
+        setSuggestions([]);
+    };
+
     if (loading) return <Loading />;
     if (error)
         return <div>Error fetching products. Please try again later.</div>;
@@ -51,15 +76,33 @@ export function Products() {
                 <h1>Products</h1>
                 <form action="search" onSubmit={handleSubmit}>
                     <label htmlFor="search">
-                        {" "}
                         <p>search</p>
                     </label>
                     <input
                         id="search"
                         type="text"
                         placeholder="Search"
+                        value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}
                     />
+                    {suggestions.length > 0 && (
+                        <SuggestionsDropdown>
+                            {suggestions.map((suggestion, index) => (
+                                <ul key={index}>
+                                    <li
+                                        key={suggestion.id}
+                                        onClick={() =>
+                                            handleSuggestionClick(
+                                                suggestion.title
+                                            )
+                                        }
+                                    >
+                                        {suggestion.title}
+                                    </li>
+                                </ul>
+                            ))}
+                        </SuggestionsDropdown>
+                    )}
                 </form>
             </SearchContainer>
             <AllCards>

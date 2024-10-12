@@ -32,6 +32,7 @@ export const SearchContainer = styled.section`
     gap: 2rem;
     > form {
         width: 100%;
+        position: relative;
     }
     > form > label > p {
         display: none;
@@ -48,6 +49,29 @@ export const SearchContainer = styled.section`
         outline: none;
     }
 `;
+
+export const SuggestionsDropdown = styled.ul`
+    position: absolute;
+    background: ${(props) => props.theme.colors.background};
+    max-height: 10rem;
+    overflow-y: auto;
+    width: 14rem;
+    left: 0;
+    margin-left: 4rem;
+    list-style: none;
+    z-index: 1;
+    > ul {
+    }
+    li {
+        padding: 10px;
+        cursor: pointer;
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+`;
+
 export const CardContainer = styled.div`
     border-radius: 0.5rem;
     overflow: hidden;
